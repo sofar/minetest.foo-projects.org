@@ -8,9 +8,19 @@
 
 	<h1>Server Status</h1>
 
+	<div id="24h" style="text-align:center;">
+	<button onclick="document.getElementById('24h').style.display = 'none'; document.getElementById('30d').style.display = 'block';">30 day graphs</button>
 	<p style="text-align:center;"><img src="/mt-players.png" /></p>
 	<p style="text-align:center;"><img src="/mt-lag.png" /></p>
 	<p style="text-align:center;"><img src="/mt-uptime.png" /></p>
+	</div>
+
+	<div id="30d" style="display:none; text-align:center;">
+	<button onclick="document.getElementById('24h').style.display = 'block'; document.getElementById('30d').style.display = 'none';">24 hour graphs</button>
+	<p style="text-align:center;"><img src="/mt-players-30d.png" /></p>
+	<p style="text-align:center;"><img src="/mt-lag-30d.png" /></p>
+	<p style="text-align:center;"><img src="/mt-uptime-30d.png" /></p>
+	</div>
 
 	<script src="bot.js"></script>
   </body>
