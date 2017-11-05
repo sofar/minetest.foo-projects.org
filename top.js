@@ -25,4 +25,5 @@ function jsonget(url, id)
 }
 
 jsonget("http://minetest.foo-projects.org/top_players.json", "player");
+jsonget("http://minetest.foo-projects.org/top_boxes.json", "box");
 
