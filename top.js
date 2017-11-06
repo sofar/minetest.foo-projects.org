@@ -10,7 +10,7 @@ function jsonget(url, id)
 		{
 			var tbl = JSON.parse(r.responseText);
 
-			var s = "<table style=\"width: 80%;margin: 0 auto;\"><tr><th>Rank</th><th>Name</th></tr>\n";
+			var s = "<table style=\"width: 80%;margin: 0 auto;\"><tr><th width=\"15%\">Rank</th><th>Name</th></tr>\n";
 
 			for (i = 1; i <= 10; i++)
 			{
@@ -26,4 +26,5 @@ function jsonget(url, id)
 
 jsonget("http://minetest.foo-projects.org/top_players.json", "player");
 jsonget("http://minetest.foo-projects.org/top_boxes.json", "box");
+jsonget("http://minetest.foo-projects.org/top_builders.json", "builder");
 
