@@ -25,7 +25,7 @@ function jsonget(url)
 					s += "<tr>";
 					s += "<td>" + index2 + "</td>";
 					s += "<td>" + boxes[key2].id + "</td>";
-					s += "<td>" + boxes[key2].name + "</td>";
+					s += "<td>" + getbox(boxes[key2].id, boxes[key2].name) + "</td>";
 					s += "<td>" + boxes[key2].builder + "</td>";
 					s += "</tr>\n";
 				})
