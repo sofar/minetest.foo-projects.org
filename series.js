@@ -24,7 +24,7 @@ function jsonget(url)
 				var boxes = series.boxes;
 				Object.keys(boxes).forEach(function(key2, index2) {
 					s += "<tr>";
-					s += "<td>" + index2 + "</td>";
+					s += "<td>" + (index2 + 1) + "</td>";
 					s += "<td>" + boxes[key2].id + "</td>";
 					s += "<td>" + getbox(boxes[key2].id, boxes[key2].name) + "</td>";
 					s += "<td>" + boxes[key2].builder + "</td>";
