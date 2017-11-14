@@ -4,6 +4,7 @@ document.write('\
 	<kbd><a href="/rules.html">Server Rules</a></kbd>\
 	<kbd><a href="/rankings.html">Rankings</a></kbd>\
 	<kbd><a href="/boxes.html">Boxes</a></kbd>\
+	<kbd><a href="/status.html">Status</a></kbd><br />\
 	<kbd><a href="/gallery.html">Screenshot Gallery</a></kbd>\
 	<kbd><a href="/videos.html">Videos</a></kbd>\
 	<kbd><a href="/credits.html">Credits</a></kbd>\
