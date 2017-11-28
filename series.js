@@ -40,5 +40,5 @@ function jsonget(url)
 	r.send();
 }
 
-jsonget("http://minetest.foo-projects.org/series.json");
+jsonget("https://minetest.foo-projects.org/series.json");
 

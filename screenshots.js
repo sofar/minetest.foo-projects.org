@@ -38,7 +38,7 @@ function jsonget(url)
 	r.send();
 }
 
-jsonget("http://minetest.foo-projects.org/screenshots.json");
+jsonget("https://minetest.foo-projects.org/screenshots.json");
 
 span.onclick = function() {
 	modal.style.display = "none";

@@ -41,7 +41,7 @@ function jsonget(url, id)
 	r.send();
 }
 
-jsonget("http://minetest.foo-projects.org/top_players.json", "player");
-jsonget("http://minetest.foo-projects.org/top_boxes.json", "box");
-jsonget("http://minetest.foo-projects.org/top_builders.json", "builder");
+jsonget("https://minetest.foo-projects.org/top_players.json", "player");
+jsonget("https://minetest.foo-projects.org/top_boxes.json", "box");
+jsonget("https://minetest.foo-projects.org/top_builders.json", "builder");
 
