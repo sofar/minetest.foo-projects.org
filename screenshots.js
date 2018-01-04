@@ -18,7 +18,7 @@ function getbox(n, content)
 	return content;
 }
 
-function jsonget(url)
+function screenshotjsonget(url)
 {
 	var r = new XMLHttpRequest();
 	r.open("GET", url, true);
@@ -38,7 +38,7 @@ function jsonget(url)
 	r.send();
 }
 
-jsonget("https://minetest.foo-projects.org/screenshots.json");
+screenshotjsonget("https://minetest.foo-projects.org/screenshots.json");
 
 span.onclick = function() {
 	modal.style.display = "none";

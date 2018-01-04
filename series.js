@@ -2,7 +2,7 @@ String.prototype.capitolize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-function jsonget(url)
+function seriesjsonget(url)
 {
 	var r = new XMLHttpRequest();
 	r.open("GET", url, true);
@@ -40,5 +40,5 @@ function jsonget(url)
 	r.send();
 }
 
-jsonget("https://minetest.foo-projects.org/series.json");
+seriesjsonget("https://minetest.foo-projects.org/series.json");
 

@@ -1,4 +1,4 @@
-function jsonget(url, id)
+function topjsonget(url, id)
 {
 	var r = new XMLHttpRequest();
 	r.open("GET", url, true);
@@ -41,7 +41,7 @@ function jsonget(url, id)
 	r.send();
 }
 
-jsonget("https://minetest.foo-projects.org/top_players.json", "player");
-jsonget("https://minetest.foo-projects.org/top_boxes.json", "box");
-jsonget("https://minetest.foo-projects.org/top_builders.json", "builder");
+topjsonget("https://minetest.foo-projects.org/top_players.json", "player");
+topjsonget("https://minetest.foo-projects.org/top_boxes.json", "box");
+topjsonget("https://minetest.foo-projects.org/top_builders.json", "builder");
 
