@@ -14,7 +14,7 @@ function topjsonget(url, id)
 				var s = "<table style=\"width: 80%;margin: 0 auto;\">";
 				s += "<tr><th width=\"5%\">Rank</th><th width=\"15%\">Number</th><th>Name</th><th>Builder</th></tr>\n";
 
-				for (i = 1; i <= 10; i++)
+				for (i = 1; i <= 25; i++)
 				{
 					s += "<tr>";
 					s += "<td>" + i.toString() + "</td>";
@@ -28,7 +28,7 @@ function topjsonget(url, id)
 			} else {
 				var s = "<table style=\"width: 80%;margin: 0 auto;\"><tr><th width=\"15%\">Rank</th><th>Name</th></tr>\n";
 
-				for (i = 1; i <= 10; i++)
+				for (i = 1; i <= 25; i++)
 				{
 					s += "<tr><td>" + i.toString() + "</td><td>" + tbl[i] + "</td></tr>\n";	
 				}
