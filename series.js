@@ -1,4 +1,4 @@
-String.prototype.capitolize = function() {
+String.prototype.capitalize = function() {
 	return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
@@ -18,7 +18,7 @@ function seriesjsonget(url)
 			Object.keys(tbl).forEach(function(key, index) {
 				var series = tbl[key];
 				s += "<a name=\"" + series.name + "\"></a>";
-				s += "<h2>" + series.name.capitolize() + " series</h2>\n";
+				s += "<h2>" + series.name.capitalize() + " series</h2>\n";
 				s += "<table style=\"width: 80%;margin: 0 auto;\">\n";
 				s += "<th width=\"5%\"></th><th width=\"15%\">Number</th><th width=\"60%\">Name</th><th>Builder</th>\n";
 				var boxes = series.boxes;
