@@ -27,5 +27,5 @@ function queuejsonget(url)
 	r.send();
 }
 
-queuejsonget("https://minetest.foo-projects.org/queue.json");
+queuejsonget("https://luanti.foo-projects.org/queue.json");
 

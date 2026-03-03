@@ -38,7 +38,7 @@ function screenshotjsonget(url)
 	r.send();
 }
 
-screenshotjsonget("https://minetest.foo-projects.org/screenshots.json");
+screenshotjsonget("https://luanti.foo-projects.org/screenshots.json");
 
 span.onclick = function() {
 	modal.style.display = "none";

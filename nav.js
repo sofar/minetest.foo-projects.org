@@ -9,5 +9,5 @@ document.write('\
 	<kbd><a href="/videos.html">Videos</a></kbd>\
 	<kbd><a href="/credits.html">Credits</a></kbd>\
 	<kbd><a href="/feedback.html">Feedback</a></kbd>\
-	<kbd><a href="https://forum.minetest.net/viewtopic.php?t=18406">Minetest Forum</a></kbd>\
+	<kbd><a href="https://forum.luanti.org/viewtopic.php?t=18406">Luanti Forum</a></kbd>\
 </div>')
