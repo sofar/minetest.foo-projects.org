@@ -14,25 +14,37 @@ function topjsonget(url, id)
 				var s = "<table style=\"width: 80%;margin: 0 auto;\">";
 				s += "<tr><th width=\"5%\">Rank</th><th width=\"15%\">Number</th><th>Name</th><th>Builder</th></tr>\n";
 
+				var count = 0;
 				for (var i = 1; i <= 25; i++)
 				{
+					if (!tbl[i]) break;
 					s += "<tr>";
 					s += "<td>" + i.toString() + "</td>";
 					s += "<td>" + tbl[i].split(/: /, 1)[0] + "</td>";
 					var ss = tbl[i].split(/: /, 2);
 					s += "<td>" + getbox(tbl[i].split(/: /, 1)[0], ss[1].split(/ by /, 1)[0].replace(/"/g, '')) + "</td>";
 					s += "<td>" + ss[1].split(/ by /, 2)[1] + "</td>";
-					s += "</tr>\n";	
+					s += "</tr>\n";
+					count++;
 				}
 				s += "</table>\n";
+				if (count == 0) {
+					s = "<p style=\"text-align:center;\">Not enough data for this time period yet.</p>";
+				}
 			} else {
 				var s = "<table style=\"width: 80%;margin: 0 auto;\"><tr><th width=\"15%\">Rank</th><th>Name</th></tr>\n";
 
+				var count = 0;
 				for (var i = 1; i <= 25; i++)
 				{
-					s += "<tr><td>" + i.toString() + "</td><td>" + tbl[i] + "</td></tr>\n";	
+					if (!tbl[i]) break;
+					s += "<tr><td>" + i.toString() + "</td><td>" + tbl[i] + "</td></tr>\n";
+					count++;
 				}
 				s += "</table>\n";
+				if (count == 0) {
+					s = "<p style=\"text-align:center;\">Not enough data for this time period yet.</p>";
+				}
 			}
 
 			document.getElementById(id).innerHTML = s;
@@ -41,7 +53,20 @@ function topjsonget(url, id)
 	r.send();
 }
 
-topjsonget("https://luanti.foo-projects.org/top_players.json", "player");
-topjsonget("https://luanti.foo-projects.org/top_boxes.json", "box");
-topjsonget("https://luanti.foo-projects.org/top_builders.json", "builder");
+var BASE = "https://luanti.foo-projects.org/";
 
+function loadRankings(suffix) {
+	// Update active tab
+	["alltime", "yearly", "monthly"].forEach(function(w) {
+		var el = document.getElementById("tab-" + w);
+		var active = (suffix === "" && w === "alltime") ||
+			(suffix === "_" + w);
+		el.innerHTML = active ? "<b>" + el.textContent + "</b>" : el.textContent;
+	});
+
+	topjsonget(BASE + "top_players" + suffix + ".json", "player");
+	topjsonget(BASE + "top_boxes" + suffix + ".json", "box");
+	topjsonget(BASE + "top_builders" + suffix + ".json", "builder");
+}
+
+loadRankings("");
