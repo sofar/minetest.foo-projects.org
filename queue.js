@@ -13,7 +13,7 @@ function queuejsonget(url)
 			var s = "";
 
 			s += "<table style=\"width: 80%;margin: 0 auto;\">\n";
-			s += "<th width=\"5%\"></th><th width=\"15%\">Number</th><th width=\"60%\">Name</th><th>Builder</th>\n";
+			s += "<tr><th width=\"5%\"></th><th width=\"15%\">Number</th><th width=\"60%\">Name</th><th>Builder</th></tr>\n";
 			Object.keys(tbl).forEach(function(key, index) {
 				var item = tbl[key];
 				s += "<tr><td>" + key + "</td><td>" + item.id + "</td><td>" + item.name + "</td><td>" + item.builder + "</td></tr>\n"

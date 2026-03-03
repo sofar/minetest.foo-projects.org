@@ -20,7 +20,7 @@ function seriesjsonget(url)
 				s += "<a name=\"" + series.name + "\"></a>";
 				s += "<h2>" + series.name.capitalize() + " series</h2>\n";
 				s += "<table style=\"width: 80%;margin: 0 auto;\">\n";
-				s += "<th width=\"5%\"></th><th width=\"15%\">Number</th><th width=\"60%\">Name</th><th>Builder</th>\n";
+				s += "<tr><th width=\"5%\"></th><th width=\"15%\">Number</th><th width=\"60%\">Name</th><th>Builder</th></tr>\n";
 				var boxes = series.boxes;
 				Object.keys(boxes).forEach(function(key2, index2) {
 					s += "<tr>";
