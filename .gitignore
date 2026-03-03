@@ -5,3 +5,4 @@ mt-players.png
 mt-uptime-30d.png
 mt-uptime.png
 *.json
+!screenshots.json
