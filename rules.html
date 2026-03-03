@@ -3,74 +3,348 @@
   <head>
 	<title>Inside the Box</title>
 	<link rel="stylesheet" href="css/beauty.min.css" />
+	<script>
+	function showrules(id) {
+		var tabs = ["player", "creator", "reviewer", "moderator"];
+		for (var i = 0; i < tabs.length; i++) {
+			document.getElementById(tabs[i]).style.display = tabs[i] == id ? "block" : "none";
+		}
+	}
+	</script>
   </head>
   <body>
 	<script src="nav.js"></script>
 
 	<h1>Server Rules</h1>
 
-	<p>Inside The Box is meant to be a pleasant place for all
-	players, and therefore we ask that all players behave
-	accordingly. That means that you should treat this server,
-	the players on it, and those who may come to experience
-	the server through some other way with respect and as
-	you yourself would like to be treated</p>
-	
-	<p>It goes without saying that anything that players do that
-	would alter, disrupt or upset any part of the experience of
-	players is a bannable offense, without warning, and subject
-	to being reported to authorities if this is necessary. If
-	you can't figure out what we mean by this, please leave
-	immediately</p>
-	
-	<p>Other than that, you should know that all the work on this
-	server is copyrighted, and that your ability to use or re-use
-	any of it is restricted and bound to certain conditions. Again,
-	if you don't know what this means and what you can or can not
-	do, ask us first. Of course, playing on this server is entirely
-	allowed without restrictions</p>
-	
-	<p>You should know that we do monitor and log player conversations
-	and player interactions with the server. We do not provide
-	these logs to anyone unless legally required to do so, and we
-	do not sell any player information to other parties or
-	companies. However, we will use player data to analyze and
-	improve the server experience for users, so we may watch
-	closely how players behave and interact on the server. If you
-	do not agree with this, please leave immediately</p>
-	
-	<p>Cheating, as described by using unfair means to gain an
-	advantage over other players, is expressly prohibited. That means
-	that using cheats to fly, look through walls, sprint, using noclip
-	and unfairly obtained other player capabilities while on this
-	server are subject to an immediate ban without warning. We believe
-	that the best experience is had when players experience the real
-	challenge themselves without unfair help</p>
-	
+	<p style="text-align: center;">
+	<button onclick="showrules('player')">Player Rules</button>
+	<button onclick="showrules('creator')">Creator Rules</button>
+	<button onclick="showrules('reviewer')">Reviewer Rules</button>
+	<button onclick="showrules('moderator')">Moderator Rules</button>
+	</p>
+
+	<div id="player">
+
+	<h2>Player Rules</h2>
+
+	<h3>[1] Behavior</h3>
+	<p>Inside The Box is meant to be a pleasant place for all players, and
+	therefore, we ask that all players behave accordingly. That means that
+	you should treat this server, the players on it, and those who may
+	come to experience the server in some other way with respect
+	and as you yourself would like to be treated.</p>
+	<p>It goes without saying that anything that players do that would alter,
+	disrupt or upset any part of the experience of players is a bannable
+	offense, without warning, and subject to being reported to authorities
+	if this is necessary. If you can't figure out what we mean by this,
+	please leave immediately.</p>
+
+	<h3>[2] Copyright</h3>
+	<p>Other than that, you should know that all the work on this server
+	is copyrighted, and that your ability to use or re-use any of
+	it is restricted and bound by certain conditions. Again, if you
+	don't know what this means or what you can or cannot do, ask us
+	first. Of course, playing on this server is entirely allowed without
+	restrictions.</p>
+
+	<h3>[3] Privacy Policy</h3>
+	<p>You should know that we monitor and log player conversations and
+	player interactions with the server. We do not provide these logs
+	to anyone unless legally required to do so, and we do not sell any
+	player information to other parties or companies. However, we will use
+	player data to analyze and improve the server experience for users,
+	so we may closely watch how players behave and interact on the server,
+	for instance, by creating scores or rankings. If you do not agree with
+	this, please leave immediately.</p>
+
+	<h3>[4] Cheating</h3>
+	<p>Cheating, as described by using unfair means to gain an advantage
+	over other players is expressly prohibited. That means that using
+	cheats to fly, look through walls, sprint, use noclip, and unfairly to
+	other player capabilities obtained while on this server are subject to
+	an immediate ban without warning. We believe that the best experience
+	is had when players experience the real challenge themselves without
+	unfair help. If you do discover a way to cheat or exploit, we'd love
+	to work with you to resolve this problem. If you don't tell us, but
+	abuse it or tell others, we may take action against you.</p>
+
+	<h3>[5] Hints</h3>
 	<p>We explicitly allow players to discuss and help players with
-	hints. This is not cheating. While we think that players get
-	a better experience trying to solve a problem and persist in
-	that, we realize that sometimes you just may not find that
-	secret, well hidden objective</p>
-	
-	<p>Because of the amount of available light in the game varies
-	per display and per computer, it is always allowed to pick up
-	and move torches. We know that certain levels are very dark
-	and this may make it very difficult for some players. Therefore
-	we allow you to move and place torches where ever you can. Of
-	Course, not every level may have torches available for the
-	player to do so</p>
-	
-	<p>All players are required to complete the tutorial before they
-	are allowed to enter the general lobby. We want to make sure
-	the players understand and appreciate the puzzle element of
-	the game before they start creating their own challenges.</p>
+	hints. This is not cheating. While we think that players get a
+	better experience trying to solve a problem and persisting in that,
+	we realize that sometimes you just may not find that secret, well
+	hidden objective.</p>
+
+	<h3>[6] Light</h3>
+	<p>Because the amount of available light in the game varies per
+	display, and per computer, it is always allowed to pick up and move
+	torches. We know that certain levels are very dark, and this may make
+	it very difficult for some players. Therefore, we allow you to move
+	and place torches wherever you can. Of course, not every level
+	has torches available for the player to do so.</p>
+
+	<h3>[7] Tutorial</h3>
+	<p>All players are required to complete the tutorial before they are
+	allowed to enter the general lobby. We want to make sure the players
+	understand and appreciate the puzzle element of the game before they
+	start creating their own challenges.</p>
+
+	<h3>[8] User generated content</h3>
+	<p>We don't want to take over the copyright of your works, but you can't build
+	on this server without somehow permitting the server to share your
+	creation with other players, and therefore, you are granting us the
+	rights to do so. Even if you never submit your creation for review,
+	you still grant the server whatever rights are applicable to sharing
+	any content you put in your own creations, and allow the server to
+	redistribute it to other people without reservations.</p>
+
+	<h3>[9] FAQ</h3>
+	<p>Q: Can I record videos while playing on this server?<br />
+	A: Yes, but if you record with the music from this server, you
+	are required to provide the proper attribution, and you may not use
+	monetization or otherwise make videos for commercial purposes. The
+	credits are: "Lee Rosevere, Music inspired by MiNRS, CC-BY-NC-4.0"</p>
+	<p>Q: I think I found a bug!<br />
+	A: contact sofar@foo-projects.org, or <code>sofar</code> in the game. Or visit
+	the website and visit the <a href="/feedback.html">Feedback</a> page.</p>
+	<p>Q: Where can I find more information?<br />
+	A: Go to: <a href="https://luanti.foo-projects.org">luanti.foo-projects.org</a></p>
 
 	<p><i>On the server, these rules can be read with the command
 	<code>/rules</code></i></p>
 
-	<p><i>Additional rules for building/creating also exist - these
-	can be read on the server with <code>/rules creator</code></i></p>
+	</div>
+
+	<div id="creator" style="display:none;">
+
+	<h2>Creator Rules</h2>
+
+	<p>These rules are for people who create puzzle boxes.</p>
+
+	<p>We want players to enjoy coming to this server and to spend lots
+	of time playing puzzles. In order to promote this, we have a few
+	basic ground rules to prevent player frustration and promote fun
+	and challenging puzzles. Some of the things listed below are more
+	"guidelines" than hard rules, and some are really hard rules. If
+	you think that breaking a rule listed here would improve the game,
+	then discuss it with the admins, and be prepared to state your case.</p>
+
+	<h3>[1] The puzzle must always remain solvable</h3>
+	<p>An abandoned puzzle is a failed puzzle, and the player lost. Do not ever
+	make a puzzle that a player must leave to reset. If your puzzle
+	needs some sort of reset button, you need to build it with the tools
+	available to you in the box creator mode.</p>
+
+	<h3>[2] Dying must never be required to complete a box</h3>
+	<p>A player must never feel like having to commit suicide. There should
+	always be a way out. If the player is actually in an unsolvable
+	situation, you should kill the player immediately, for instance by
+	flooding the player with lava.</p>
+
+	<h3>[3] Do not create "manholes" that the player can get stuck in</h3>
+	<p>A stuck player is an abandoned player. Either kill the player or
+	allow the player to recover.</p>
+
+	<h3>[4] Do not make darkness an essential part of your puzzle</h3>
+	<p>Your monitor may be nice and bright, but some people may have bad
+	vision or a darker monitor. And your cave system with 20 cave parts
+	that has one torch is just impossible to do without cheating and turning
+	up gamma on the monitor. Dark boxes promote cheating and give an
+	unfair advantage. You can use darkness as an occasional feature
+	or even anti-feature (e.g., making nonessential parts dark), but if
+	your box is mostly dark; that's not acceptable.</p>
+
+	<h3>[5] Do not use fake items</h3>
+	<p>Planting empty or decoy items is the opposite of creativity,
+	and frustrates players. Try to reward the player instead. Unconnected
+	switches, empty chests, locked item frames that are not in a "hint"
+	position or are clearly decorative are all sources of frustration.</p>
+
+	<h3>[6] Do not make boxes that are 3/4 empty</h3>
+	<p>Empty, large spaces feel boring and allow the player to quickly see
+	almost everything they need to find. Fill up the space, even up and
+	down, as much as you can do with decoration or playable areas.</p>
+
+	<h3>[7] When submitting, expect feedback, and update your box</h3>
+	<p>Everyone wins if your boxes are better. You get a better box that will
+	be played more and where players are spending more time playing it.</p>
+
+	<h3>[8] Use buttons, not switches</h3>
+	<p>Unless you need the player to flip a switch twice, you should
+	always use a button with a filter to open that door, create some nodes,
+	or open a pathway.</p>
+
+	<h3>[9] Don't build on the bottom</h3>
+	<p>This is a sure way to get yourself into trouble or make an
+	uninteresting and an open box. Always throw some basic landscaping in
+	place with the landscaping tool and build at least a few blocks up.</p>
+
+	<h3>[10] Decorate, decorate, decorate</h3>
+	<p>4 Hours is almost the minimum amount of time you'll need to spend building to
+	make a decently decorated and well-functioning puzzle, and more if you
+	add lots of mechanical components. You can not, I repeat, not make a
+	box in 30 minutes and expect it to be "well done". Even box 6, which
+	has a meager sub-100 nodes and took several hours of work to get right.</p>
+	<p>Use the paint tool. Diversify your nodes. Use slabs to create relief
+	and texture. But don't overmix things either. 5 different colors
+	flowers aren't stylish. Mixing certain blocks for building material
+	may also not match well.</p>
+
+	<h3>[11] Don't make a puzzle, first!</h3>
+	<p>Always, always make the background and stage for your puzzle first.
+	It is already really hard to think of a good way to capture your
+	player and to tell a story, but you really can't do it unless there
+	is a clear atmosphere with a story present. The style of your box, the
+	areas that the player needs to visit; these all dictate the obstacles
+	that the player will have to overcome and are easy puzzle elements
+	that you can add to make the puzzle more complex and enjoyable.</p>
+
+	<h3>[12] Avoid signs and icons</h3>
+	<p>Don't repeat the name of the box. Don't put your name somewhere
+	on a sign. These are all things that break the "4th wall" for players
+	and ruin the immersion feeling. A doorbell in a normal house doesn't
+	have the word "doorbell" next to it. Icons, similarly, are not really
+	meant for decoration or hints, and usually distract more than anything.</p>
+
+	<h3>[13] Don't leave hints in your box</h3>
+	<p>Don't use a terminal for player hints. They always figure it out,
+	and it breaks the 4th wall. Plus, most of the time, the terminals
+	are a distraction. The terminals are for lore and stories you may
+	want to share. Try to stay away from personal stuff and overly
+	dramatic passages, though. It's a game, and it should remain fun for
+	everyone.</p>
+
+	<h3>[14] Parkour rules</h3>
+	<p>This server isn't meant for endless hardcore parkour. We will
+	accept boxes that are parkour-focused, but the emphasis should be
+	on puzzles and not jumps. On top of that, jumps must not be one
+	of these or further than these: 1 node up and over a 3-node gap;
+	across a level 4 node gap. 1 node down and over a 5-node gap; Any
+	jump should be reasonably doable. In doubt: If you cannot repeat
+	the same jump 5x in succession without failing, it's too difficult.</p>
+
+	<p><i>On the server, these rules can be read with the command
+	<code>/rules creator</code></i></p>
+
+	</div>
+
+	<div id="reviewer" style="display:none;">
+
+	<h2>Reviewer Rules</h2>
+
+	<h3>What is a reviewer?</h3>
+
+	<p>Reviewers are players who can playtest submitted boxes and
+	provide feedback to the builder. Reviewers do not accept or reject
+	boxes. Reviews are visible by the builder, and by the moderator. Other
+	reviewers can only see their own reviews.</p>
+
+	<h3>[1] Cooperate and improve, not criticize</h3>
+	<p>Everyone wins when boxes are better than they were before. The
+	players get better content, and builders can enjoy players spending
+	time in their creations. We do not want to break this positive and
+	constructive feedback cycle. To do that, we have to have reviewers
+	and the moderators be friendly, helpful, and constructive.</p>
+
+	<h3>[2] Stay positive, do not use negative language</h3>
+	<p>Builders are spending an enormous amount of time to make boxes. This
+	isn't something we should take lightly. The whole server exists because
+	there are builders that are happy to do so. But we can't take that
+	for granted. We have to remain positive and constructive at all times
+	when doing review and moderation work.</p>
+	<p>So avoid writing reviews that state "this aspect is bad", but
+	instead form your review in a constructive way "please improve this
+	aspect". This helps builders focus on finding easy ways to improve
+	their submission. E.g. When you write "There's no plants/landscape"
+	it gives a clear indication to the builder what to do, and is better
+	than writing "There's no decoration" which has no direction.</p>
+
+	<h3>[3] Work with the builder, help where possible</h3>
+	<p>Reviewing submissions is a delicate act where we want the builder
+	to improve their boxes whenever they can, and at the same time not
+	behave as a person who constantly "moves the goal post". Be mindful of
+	repeatedly sending review to the submitter that leads down this path.</p>
+
+	<h3>[4] Use the /note tool and leave clear review feedback</h3>
+	<p>The /note command can be used to show a builder exactly what you mean
+	- it can record your position inside the box. The builder can click a
+	"Take me there" and see what you were seeing. This is a powerful tool
+	to fix little but disruptive mistakes or gaps.</p>
+
+	<h3>[5] Use the /feedback tool and mark things as fixed/resolved</h3>
+	<p>Every time a builder takes the feedback offered to them, and fixes
+	something, it's a really good idea that the reviewer checks this. The
+	system allows you to mark your previous reviews as "Resolved", and
+	"Unresolved". Use this when you can - if a builder fixed an issue
+	that you reported, then please take the time to check, and mark it
+	as such. The builder can't mark items as resolved - you have to.</p>
+
+	<h3>[6] Play the boxes you are reviewing, entirely</h3>
+	<p>The server records that you have, and it shows as a positive review in
+	the system, so, it helps everyone. Even the builder can see that you
+	at least tried their box. Make sure to exit out the exit doors. This
+	is when your playthrough has been recorded.</p>
+
+	<h3>[7] Work with the moderator team</h3>
+	<p>There are others, including the server admins, that can help. Please
+	ask and communicate. Be part of the team. Ping sofar if you must.</p>
+
+	<h3>[8] It doesn't need to be perfect</h3>
+	<p>Not everyone is a Picasso or a Van Gogh. Sometimes it's okay to review
+	a box that you may deem "very low quality" and just allow it to pass
+	through review. Try and work with the builder to improve the box. If
+	the builder doesn't respond to reviews or not make any improvements,
+	let the moderator (players with the accept privilege) deal with that.</p>
+
+	<h3>[9] Double check those terminals and signs</h3>
+	<p>Make sure there's no weird things. Check that the box meets the builder
+	guidelines. These were written for this purpose.</p>
+
+	<p><i>On the server, these rules can be read with the command
+	<code>/rules reviewer</code></i></p>
+
+	</div>
+
+	<div id="moderator" style="display:none;">
+
+	<h2>Moderator Rules</h2>
+
+	<h3>What is a moderator?</h3>
+
+	<p>A moderator is a special reviewer that can see all reviews, and
+	decide whether a box is ready to be accepted, based on the feedback
+	from reviewers and the builder, or not. As a moderator, you play a
+	crucial role in conveying the need for improvements and deciding at
+	the right time that the box is good to go. Once you accept a box,
+	you may need to include it in a series.</p>
+
+	<h3>[1] Work with the team</h3>
+	<p>Everyone can use some help. Builders can use guidance. Reviewers
+	may be helped with better instructions or feedback on how to review,
+	or what to look at. Use the telex and communicate, and ping sofar
+	when something isn't clear.</p>
+
+	<h3>[2] Read all the reviews</h3>
+	<p>Make sure reviews were addressed by the builder. Read all the reviews.
+	Check that things that were asked to be changed or fixed were done.</p>
+
+	<h3>[3] Play through the box, one more time</h3>
+	<p>Is it really okay? One last check never hurt.</p>
+
+	<h3>[4] Sometimes okay is just enough</h3>
+	<p>Try not to set the bar impossibly high. There are builders who are
+	sometimes very young. Encourage them, so they come back and build
+	more content.</p>
+
+	<h3>[5] Review is hard and time consuming</h3>
+	<p>Try and encourage our reviewers to come back and help create and
+	build the content that this server needs to thrive!</p>
+
+	<p><i>On the server, these rules can be read with the command
+	<code>/rules accepter</code></i></p>
+
+	</div>
 
 	<script src="bot.js"></script>
   </body>
