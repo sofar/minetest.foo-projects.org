@@ -2,18 +2,62 @@
 var modal = document.getElementById('modal');
 var span = document.getElementsByClassName("close")[0];
 var screenshots = {};
+var modalImages = [];
+var modalIndex = 0;
+
+function updateModal()
+{
+	var e = document.getElementById('screenshot');
+	var img = "<img width=\"100%\" src=\"" + modalImages[modalIndex] + "\"/>";
+	var nav = "";
+	if (modalImages.length > 1) {
+		nav = "<div style=\"text-align:center;margin-top:8px;\">";
+		if (modalIndex > 0) {
+			nav += "<a href=\"javascript:modalPrev()\" style=\"margin-right:16px;\">&lt; prev</a>";
+		}
+		nav += (modalIndex + 1) + " of " + modalImages.length;
+		if (modalIndex < modalImages.length - 1) {
+			nav += "<a href=\"javascript:modalNext()\" style=\"margin-left:16px;\">next &gt;</a>";
+		}
+		nav += "</div>";
+	}
+	e.innerHTML = img + nav;
+}
+
+function modalPrev()
+{
+	if (modalIndex > 0) {
+		modalIndex--;
+		updateModal();
+	}
+}
+
+function modalNext()
+{
+	if (modalIndex < modalImages.length - 1) {
+		modalIndex++;
+		updateModal();
+	}
+}
 
 function showscreenshot(s)
 {
-	var e = document.getElementById('screenshot');
-	e.innerHTML = "<img width=\"100%\" src=\"https://i.imgur.com/" + s + ".jpg\"/>";
+	if (typeof s === "string") {
+		modalImages = [s];
+	} else {
+		modalImages = s;
+	}
+	modalIndex = 0;
+	updateModal();
 	modal.style.display = "block";
 }
 
 function getbox(n, content)
 {
 	if (screenshots[n]) {
-		return("<a href=\"javascript:showscreenshot('" + screenshots[n] + "')\">" + content + "</a>");
+		var imgs = screenshots[n];
+		var arg = JSON.stringify(imgs).replace(/'/g, "\\'");
+		return("<a href=\"javascript:showscreenshot(" + arg + ")\">" + content + "</a>");
 	}
 	return content;
 }
