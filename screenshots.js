@@ -13,11 +13,11 @@ function updateModal()
 	if (modalImages.length > 1) {
 		nav = "<div style=\"text-align:center;margin-top:8px;\">";
 		if (modalIndex > 0) {
-			nav += "<a href=\"javascript:modalPrev()\" style=\"margin-right:16px;\">&lt; prev</a>";
+			nav += "<a href=\"#\" onclick=\"modalPrev();return false\" style=\"margin-right:16px;\">&lt; prev</a>";
 		}
 		nav += (modalIndex + 1) + " of " + modalImages.length;
 		if (modalIndex < modalImages.length - 1) {
-			nav += "<a href=\"javascript:modalNext()\" style=\"margin-left:16px;\">next &gt;</a>";
+			nav += "<a href=\"#\" onclick=\"modalNext();return false\" style=\"margin-left:16px;\">next &gt;</a>";
 		}
 		nav += "</div>";
 	}
@@ -57,7 +57,7 @@ function getbox(n, content)
 	if (screenshots[n]) {
 		var imgs = screenshots[n];
 		var arg = JSON.stringify(imgs).replace(/'/g, "\\'");
-		return("<a href=\"javascript:showscreenshot(" + arg + ")\">" + content + "</a>");
+		return("<a href=\"#\" onclick=\"showscreenshot(" + arg + ");return false\">" + content + "</a>");
 	}
 	return content;
 }
