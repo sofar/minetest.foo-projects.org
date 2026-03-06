@@ -55,9 +55,8 @@ function showscreenshot(s)
 function getbox(n, content)
 {
 	if (screenshots[n]) {
-		var imgs = screenshots[n];
-		var arg = JSON.stringify(imgs).replace(/'/g, "\\'");
-		return("<a href=\"#\" onclick=\"showscreenshot(" + arg + ");return false\">" + content + "</a>");
+		var arg = JSON.stringify(screenshots[n]).replace(/"/g, "&quot;");
+		return("<a href=\"#\" data-imgs=\"" + arg + "\" onclick=\"showscreenshot(JSON.parse(this.dataset.imgs));return false\">" + content + "</a>");
 	}
 	return content;
 }
