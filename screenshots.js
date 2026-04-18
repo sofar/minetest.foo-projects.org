@@ -2,16 +2,33 @@
 var modal = document.getElementById('modal');
 var span = document.getElementsByClassName("close")[0];
 var screenshots = {};
+var boxInfo = {};
 var modalImages = [];
 var modalIndex = 0;
 var modalTitle = "";
+var modalBox = null;
+
+function sortedBoxKeys()
+{
+	var keys = Object.keys(boxInfo).filter(function(k) { return screenshots[k]; });
+	keys.sort(function(a, b) { return parseInt(a) - parseInt(b); });
+	return keys;
+}
 
 function updateModal()
 {
 	var e = document.getElementById('screenshot');
 	var header = "";
 	if (modalTitle) {
-		header = "<h3 style=\"margin-top:0;text-align:center;\">" + modalTitle + "</h3>";
+		var keys = sortedBoxKeys();
+		var idx = keys.indexOf(String(modalBox));
+		var prev = (idx > 0)
+			? "<a href=\"#\" onclick=\"modalBoxPrev();return false\" style=\"margin-right:16px;\">&lt;</a>"
+			: "<span style=\"margin-right:16px;color:#ccc;\">&lt;</span>";
+		var next = (idx >= 0 && idx < keys.length - 1)
+			? "<a href=\"#\" onclick=\"modalBoxNext();return false\" style=\"margin-left:16px;\">&gt;</a>"
+			: "<span style=\"margin-left:16px;color:#ccc;\">&gt;</span>";
+		header = "<h3 style=\"margin-top:0;text-align:center;\">" + prev + modalTitle + next + "</h3>";
 	}
 	var img = "<img width=\"100%\" src=\"" + modalImages[modalIndex] + "\"/>";
 	var nav = "";
@@ -45,15 +62,33 @@ function modalNext()
 	}
 }
 
-function showscreenshot(s, title)
+function modalBoxPrev()
 {
-	if (typeof s === "string") {
-		modalImages = [s];
-	} else {
-		modalImages = s;
+	var keys = sortedBoxKeys();
+	var idx = keys.indexOf(String(modalBox));
+	if (idx > 0) {
+		showscreenshot(keys[idx - 1]);
 	}
-	modalTitle = title || "";
+}
+
+function modalBoxNext()
+{
+	var keys = sortedBoxKeys();
+	var idx = keys.indexOf(String(modalBox));
+	if (idx >= 0 && idx < keys.length - 1) {
+		showscreenshot(keys[idx + 1]);
+	}
+}
+
+function showscreenshot(n)
+{
+	modalBox = n;
+	modalImages = screenshots[n];
 	modalIndex = 0;
+	var info = boxInfo[n];
+	modalTitle = info
+		? "Box " + n + " - " + info.name + " - By " + info.author
+		: "Box " + n;
 	updateModal();
 	modal.style.display = "block";
 }
@@ -61,10 +96,8 @@ function showscreenshot(s, title)
 function getbox(n, name, author)
 {
 	if (screenshots[n]) {
-		var arg = JSON.stringify(screenshots[n]).replace(/"/g, "&quot;");
-		var title = "Box " + n + " - " + name + " - By " + author;
-		var titleAttr = title.replace(/"/g, "&quot;");
-		return("<a href=\"#\" data-imgs=\"" + arg + "\" data-title=\"" + titleAttr + "\" onclick=\"showscreenshot(JSON.parse(this.dataset.imgs), this.dataset.title);return false\">" + name + "</a>");
+		boxInfo[n] = { name: name, author: author };
+		return("<a href=\"#\" onclick=\"showscreenshot('" + n + "');return false\">" + name + "</a>");
 	}
 	return name;
 }
