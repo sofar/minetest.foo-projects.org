@@ -13,10 +13,12 @@ function seriesjsonget(url)
 		if (r.readyState == 4 && r.status == 200)
 		{
 			var tbl = JSON.parse(r.responseText);
+			var nav = "<div style=\"text-align:center; margin:1em 0;\">";
 			var s = "";
 
 			Object.keys(tbl).forEach(function(key, index) {
 				var series = tbl[key];
+				nav += "<button type=\"button\" style=\"margin:0.15em;\" onclick=\"location.hash='" + series.name + "'\">" + series.name.capitalize() + "</button>";
 				s += "<a name=\"" + series.name + "\"></a>";
 				s += "<h2>" + series.name.capitalize() + " series</h2>\n";
 				s += "<table style=\"width: 80%;margin: 0 auto;\">\n";
@@ -34,7 +36,8 @@ function seriesjsonget(url)
 				s += "</table>\n\n";
 			})
 
-			document.getElementById("series").innerHTML = s;
+			nav += "</div>";
+			document.getElementById("series").innerHTML = nav + s;
 		}
 	}
 	r.send();
