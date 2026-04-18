@@ -4,10 +4,15 @@ var span = document.getElementsByClassName("close")[0];
 var screenshots = {};
 var modalImages = [];
 var modalIndex = 0;
+var modalTitle = "";
 
 function updateModal()
 {
 	var e = document.getElementById('screenshot');
+	var header = "";
+	if (modalTitle) {
+		header = "<h3 style=\"margin-top:0;text-align:center;\">" + modalTitle + "</h3>";
+	}
 	var img = "<img width=\"100%\" src=\"" + modalImages[modalIndex] + "\"/>";
 	var nav = "";
 	if (modalImages.length > 1) {
@@ -21,7 +26,7 @@ function updateModal()
 		}
 		nav += "</div>";
 	}
-	e.innerHTML = img + nav;
+	e.innerHTML = header + img + nav;
 }
 
 function modalPrev()
@@ -40,25 +45,28 @@ function modalNext()
 	}
 }
 
-function showscreenshot(s)
+function showscreenshot(s, title)
 {
 	if (typeof s === "string") {
 		modalImages = [s];
 	} else {
 		modalImages = s;
 	}
+	modalTitle = title || "";
 	modalIndex = 0;
 	updateModal();
 	modal.style.display = "block";
 }
 
-function getbox(n, content)
+function getbox(n, name, author)
 {
 	if (screenshots[n]) {
 		var arg = JSON.stringify(screenshots[n]).replace(/"/g, "&quot;");
-		return("<a href=\"#\" data-imgs=\"" + arg + "\" onclick=\"showscreenshot(JSON.parse(this.dataset.imgs));return false\">" + content + "</a>");
+		var title = "Box " + n + " - " + name + " - By " + author;
+		var titleAttr = title.replace(/"/g, "&quot;");
+		return("<a href=\"#\" data-imgs=\"" + arg + "\" data-title=\"" + titleAttr + "\" onclick=\"showscreenshot(JSON.parse(this.dataset.imgs), this.dataset.title);return false\">" + name + "</a>");
 	}
-	return content;
+	return name;
 }
 
 function screenshotjsonget(url)

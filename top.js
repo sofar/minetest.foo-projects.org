@@ -22,8 +22,9 @@ function topjsonget(url, id)
 					s += "<td>" + i.toString() + "</td>";
 					s += "<td>" + tbl[i].split(/: /, 1)[0] + "</td>";
 					var ss = tbl[i].split(/: /, 2);
-					s += "<td>" + getbox(tbl[i].split(/: /, 1)[0], ss[1].split(/ by /, 1)[0].replace(/"/g, '')) + "</td>";
-					s += "<td>" + ss[1].split(/ by /, 2)[1] + "</td>";
+					var builder = ss[1].split(/ by /, 2)[1];
+					s += "<td>" + getbox(tbl[i].split(/: /, 1)[0], ss[1].split(/ by /, 1)[0].replace(/"/g, ''), builder) + "</td>";
+					s += "<td>" + builder + "</td>";
 					s += "</tr>\n";
 					count++;
 				}
